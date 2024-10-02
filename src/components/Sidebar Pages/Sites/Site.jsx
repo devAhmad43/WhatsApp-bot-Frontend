@@ -13,7 +13,7 @@ const Site = () => {
   const navigate = useNavigate();
   console.log("dijweijiowejoiwejpowefwefjpwefjwe",storeAllQuotations)// Local state to hold quotations
   // Effect to update local state when storeAllQuotations changes
-  
+
   return (
     <>
       <div>
@@ -41,11 +41,6 @@ const Site = () => {
         </div>
         {storeAllQuotations && storeAllQuotations?.length > 0 ? (
           storeAllQuotations?.map((site, index) => {
-            // Ensure the site and site._id are defined before rendering
-            {/* if (!site || !site?._id) {
-              return null;
-            } */}
-
             return (
               <div
                 key={index}

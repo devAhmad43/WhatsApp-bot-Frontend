@@ -16,58 +16,58 @@ const serverUrl = process.env.REACT_APP_Server_Url
 export const AdminLayout = () => {
   const [loader, setloader] = useState(true);
   const dispatch = useDispatch();
-  const storeAllUsers = useSelector(selectUsers);
+  // const storeAllUsers = useSelector(selectUsers);
   const storeQuotations = useSelector(selectQuotations);
   //////////////////////////////fetch total users/////////////////////////////////////////////
-  useEffect(() => {
-    const fetchactiveUsers = async () => {
+  // useEffect(() => {
+  //   const fetchactiveUsers = async () => {
 
-      try {
-        const response = await axios.get(
-          `${serverUrl}/api/users/active-users`
-        );
-        if (response && response.status === 200) {
-          setloader(false);
-          dispatch(addActiveUsers(response.data.activeUsers));
-          // toast.success("activeUsers Fetch Successfully");
-        }
-      } catch (error) {
-        setloader(false);
-        if (error.response) {
-          // toast.error("Failed to Fetch activeUsers");
-        } else {
-          // toast.error("Failed to Fetch activeUsers");
-        }
-      }
-    };
-    fetchactiveUsers();
-  }, []);
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await axios.get(
-          `${serverUrl}/api/users/get_all_users`
-        );
-        if (response && response.status === 200) {
-          setloader(false);
-          dispatch(Adduser(response.data.users));
+  //     try {
+  //       const response = await axios.get(
+  //         `${serverUrl}/api/users/active-users`
+  //       );
+  //       if (response && response.status === 200) {
+  //         setloader(false);
+  //         dispatch(addActiveUsers(response.data.activeUsers));
+  //         // toast.success("activeUsers Fetch Successfully");
+  //       }
+  //     } catch (error) {
+  //       setloader(false);
+  //       if (error.response) {
+  //         // toast.error("Failed to Fetch activeUsers");
+  //       } else {
+  //         // toast.error("Failed to Fetch activeUsers");
+  //       }
+  //     }
+  //   };
+  //   fetchactiveUsers();
+  // }, []);
+  // useEffect(() => {
+  //   const fetchUsers = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `${serverUrl}/api/users/get_all_users`
+  //       );
+  //       if (response && response.status === 200) {
+  //         setloader(false);
+  //         dispatch(Adduser(response.data.users));
 
-          // toast.success("Users Fetch Successfully");
-        }
-      } catch (error) {
-        setloader(false);
-        if (error.response) {
-          // toast.error("Failed to Fetch Users");
-        } else {
-          // toast.error("Failed to Fetch Users");
-        }
-      }
-    };
+  //         // toast.success("Users Fetch Successfully");
+  //       }
+  //     } catch (error) {
+  //       setloader(false);
+  //       if (error.response) {
+  //         // toast.error("Failed to Fetch Users");
+  //       } else {
+  //         // toast.error("Failed to Fetch Users");
+  //       }
+  //     }
+  //   };
 
-    if (storeAllUsers.length === 0) {
-      fetchUsers();
-    }
-  }, []);
+  //   if (storeAllUsers.length === 0) {
+  //     fetchUsers();
+  //   }
+  // }, []);
 // fetch all site ///////////////////////////////////////////////////
 useEffect(() => {
  const fetchQuotations = async () => {
@@ -92,7 +92,7 @@ useEffect(() => {
   if (storeQuotations?.length === 0) {
     fetchQuotations();
   }
-}, [dispatch]);
+}, []);
 console.log('store.....', storeQuotations);
   /////////////////////////////// fetch all deals //////////////////////////////
   return (

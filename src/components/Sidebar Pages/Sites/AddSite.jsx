@@ -5,7 +5,6 @@ import BusinessInfo from "../Sites/quotation/modals/BusinessInfo";
 import ClientModal from "../Sites/quotation/modals/ClientModal";
 import { ItemsSection } from "../Sites/quotation/ItemsSection";
 import { ButtonsSection } from "../Sites/quotation/ButtonsSection";
-import {SiteInfo} from "../Sites/SiteInfo"
 import { Loader } from "../../Loader/loader";
 import {
   selectQuotations,
@@ -17,10 +16,7 @@ import { toast } from "react-toastify";
 import { uploadtoCloudinary } from "../../../uploadFiletoCloudinary";
 import { useNavigate, useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { generatePDF } from "./quotation/PDF.js";
-import { PdfModal } from "./quotation/modals/PdfModal.js";
 const serverUrl = process.env.REACT_APP_Server_Url;
-
 const AddSite = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

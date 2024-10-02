@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill from "react-quill";
-
 export function ButtonsSection({ addQuotation, setQuotation, attachment, setAttachment }) {
   const [visibleSections, setVisibleSections] = useState({
     terms: false,
@@ -116,17 +115,16 @@ export function ButtonsSection({ addQuotation, setQuotation, attachment, setAtta
             <i className="fas fa-times"></i>
           </button>
           <h3 className="text-lg font-bold mb-2">Terms and Conditions</h3>
-
           {addQuotation.terms.map((term, index) => (
             <div key={index} className="flex items-center mb-2">
               <input
                 type="text"
-                value={term.text}
+                value={typeof term === 'string' ? term : term?.text}
                 name='term'
                 onChange={(e) => handleTermChange(index, e.target.value)}
                 placeholder={`Term ${index + 1}`}
                 className="p-2 border rounded w-full"
-              />
+              />           
               <button
                 onClick={() =>{
                   // e.preventDefault()

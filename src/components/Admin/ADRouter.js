@@ -8,13 +8,13 @@ import { PrivateRouteAdmin } from "./PrivateRouteAdmin";
 
 import Suggestions from "../Sidebar Pages/suggestions/suggestion";
 
-import SendMsg from "../Sidebar Pages/whatsapp/SendMsg";
-import QrScan from "../Sidebar Pages/whatsapp/QrScan";
+// import SendMsg from "../Sidebar Pages/whatsapp/SendMsg";
+// import QrScan from "../Sidebar Pages/whatsapp/QrScan";
 // import { DoorInfo } from "../Sidebar Pages/whatsapp/doorInfo";
 // import Editdoor from "../Sidebar Pages/whatsapp/EditDoor";
 import AddSite from "../Sidebar Pages/Sites/AddSite";
 import Site from "../Sidebar Pages/Sites/Site";
-import EditSite from "../Sidebar Pages/Sites/EditSite";
+// import EditSite from "../Sidebar Pages/Sites/EditSite";
 import { SiteInfo } from "../Sidebar Pages/Sites/SiteInfo";
 
 
@@ -33,12 +33,12 @@ export const ThemeRoutes = [
       { path: "userdetails/:id", exact: true, element: <PrivateRouteAdmin element={<UserDetails />} /> },
       { path: "Suggestions", exact: true, element: <PrivateRouteAdmin element={<Suggestions />} /> },
 
-      { path: 'AddDoors', exact: true, element: <PrivateRouteAdmin element={<SendMsg />} /> },
-      { path: 'Doors', exact: true, element: <PrivateRouteAdmin element={<QrScan />} /> },
+      // { path: 'AddDoors', exact: true, element: <PrivateRouteAdmin element={<SendMsg />} /> },
+      // { path: 'Doors', exact: true, element: <PrivateRouteAdmin element={<QrScan />} /> },
       // { path: "doorInfo/:doorId", exact: true, element: <PrivateRouteAdmin element={<DoorInfo />} /> },
       // { path: "Editdoor/:doorId", exact: true, element: <PrivateRouteAdmin element={<Editdoor />} /> },
       { path: 'Addsite', exact: true, element: <PrivateRouteAdmin element={<AddSite />} /> },
-      { path: "sites", exact: true, element: <PrivateRouteAdmin element={<Site />} /> },
+      { path: "sites/", exact: true, element: <PrivateRouteAdmin element={<Site />} /> },
       { path: "EditSite/:quotationId", exact: true, element: <PrivateRouteAdmin element={<AddSite />} /> },
       { path: "siteInfo/:quotationId", exact: true, element: <PrivateRouteAdmin element={<SiteInfo />} /> },
 

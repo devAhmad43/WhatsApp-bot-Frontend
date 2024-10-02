@@ -34,37 +34,37 @@ export function Sidebar() {
 
     const menuItems = [
 
-        {
-            text: "WhatsApp",
-            icon: (
-                <FaWhatsapp className="text-green-400 h-6 w-6" />
-            ),
-            submenu: [
-                {
-                    text: "Add User",
-                    icon: (
-                        <img
-                        src={users}
-                        alt="Authentication Icon"
-                        className="flex-shrink-0 w-6 h-6"
-                    />
-                    ),
-                    link: "/Admin/AddDoors",
-                },
-                {
-                    text: "Details",
-                    icon: (
-                        <img
-                            src={"/door2.png"}
-                            alt="Authentication Icon"
-                            className="flex-shrink-0 w-6 h-6"
-                        />
-                    ),
-                    link: "/Admin/Doors",
-                },
-                // { text: "Invoice", link: "/" },
-            ],
-        },
+        // {
+        //     text: "WhatsApp",
+        //     icon: (
+        //         <FaWhatsapp className="text-green-400 h-6 w-6" />
+        //     ),
+        //     submenu: [
+        //         {
+        //             text: "Add User",
+        //             icon: (
+        //                 <img
+        //                 src={users}
+        //                 alt="Authentication Icon"
+        //                 className="flex-shrink-0 w-6 h-6"
+        //             />
+        //             ),
+        //             link: "/Admin/AddDoors",
+        //         },
+        //         {
+        //             text: "Details",
+        //             icon: (
+        //                 <img
+        //                     src={"/door2.png"}
+        //                     alt="Authentication Icon"
+        //                     className="flex-shrink-0 w-6 h-6"
+        //                 />
+        //             ),
+        //             link: "/Admin/Doors",
+        //         },
+        //         // { text: "Invoice", link: "/" },
+        //     ],
+        // },
         // {
         //     text: "Miqats",
         //     icon: (

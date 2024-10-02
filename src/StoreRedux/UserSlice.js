@@ -5,11 +5,25 @@ export const userSlice = createSlice({
   initialState: {
     users: [],
     activeUsers: [],
+    signupStatus: 'idle', // or 'pending', 'succeeded', 'failed'
+    signupError: null,
   },
   reducers: {
 
     Adduser: (state, action) => {
       state.users = action.payload;
+    },
+    signupRequest: (state) => {
+      state.signupStatus = 'pending';
+      state.signupError = null;
+    },
+    signupSuccess: (state, action) => {
+      state.signupStatus = 'succeeded';
+      state.users = action.payload;
+    },
+    signupFailure: (state, action) => {
+      state.signupStatus = 'failed';
+      state.signupError = action.payload;
     },
     updateUserStatus: (state, action) => {
       let data = action.payload;
@@ -39,5 +53,5 @@ export const userSlice = createSlice({
 export const selectUsers = (state) => state.user.users;
 export const selectActiveUsers = (state) => state.user.activeUsers;
 
-export const { Adduser, updateUserStatus, deleteUser, addActiveUsers } = userSlice.actions; // actions
+export const { Adduser, updateUserStatus, deleteUser, addActiveUsers, signupRequest, signupSuccess, signupFailure } = userSlice.actions; // actions
 export default userSlice.reducer;

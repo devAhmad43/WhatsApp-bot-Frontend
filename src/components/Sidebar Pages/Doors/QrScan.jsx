@@ -50,28 +50,6 @@ const QrCodeDisplay = () => {
   useEffect(() => {
     fetchQrCode();
   }, []);  // Only run once on mount
-  const [message, setMessage] = useState('');
-
-    const handleLogout = async () => {
-        try {
-            // Call the logout API to disconnect WhatsApp
-            const response = await axios.post(`${serverUrl}/api/whatsapp/logout`);
-
-            if (response.status === 200) {
-                // Provide feedback about successful disconnection
-                setMessage("Disconnected from WhatsApp successfully.");
-                toast.success(message)
-            } else {
-                // Handle unexpected response
-                setMessage("Failed to disconnect from WhatsApp. Please try again.");
-                toast.info(message)
-            }
-        } catch (error) {
-            console.error("Error disconnecting from WhatsApp:", error);
-            setMessage("An error occurred during disconnection."); // Provide feedback to user
-       toast.error(message)
-          }
-    };
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       {loading ? (
