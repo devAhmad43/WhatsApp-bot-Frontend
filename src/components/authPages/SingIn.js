@@ -30,7 +30,7 @@ export default function SignIn() {
   const handleChange = async () => {
     setloading(true);
     try {
-      const response = await axios.post(`${serverUrl}/api/admin/login`, {
+      const response = await axios.post(`${serverUrl}api/admin/login`, {
         email,
         password,
       });

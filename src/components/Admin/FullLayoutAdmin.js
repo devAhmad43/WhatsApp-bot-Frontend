@@ -73,7 +73,7 @@ useEffect(() => {
  const fetchQuotations = async () => {
     try {
       const response = await axios.get(
-        `${serverUrl}/api/quotation/getAll-quotation`
+        `${serverUrl}api/quotation/getAll-quotation`
       );
       if (response && response?.status === 200) {
         console.log("response", response.data);  // Check response data

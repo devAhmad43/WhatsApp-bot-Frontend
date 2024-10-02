@@ -32,7 +32,7 @@ const SignUp = () => {
     dispatch(signupRequest());
 
     try {
-      const response = await axios.post(`${serverUrl}/api/admin/signup`, {
+      const response = await axios.post(`${serverUrl}api/admin/signup`, {
         name,
         email,
         phone,
