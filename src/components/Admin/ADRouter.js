@@ -38,11 +38,9 @@ export const ThemeRoutes = [
       // { path: "doorInfo/:doorId", exact: true, element: <PrivateRouteAdmin element={<DoorInfo />} /> },
       // { path: "Editdoor/:doorId", exact: true, element: <PrivateRouteAdmin element={<Editdoor />} /> },
       { path: 'Addsite', exact: true, element: <PrivateRouteAdmin element={<AddSite />} /> },
-      { path: "sites/", exact: true, element: <PrivateRouteAdmin element={<Site />} /> },
+      { path: "sites", exact: true, element: <PrivateRouteAdmin element={<Site />} /> },
       { path: "EditSite/:quotationId", exact: true, element: <PrivateRouteAdmin element={<AddSite />} /> },
       { path: "siteInfo/:quotationId", exact: true, element: <PrivateRouteAdmin element={<SiteInfo />} /> },
-
-
       { path: 'users', exact: true, element: <PrivateRouteAdmin element={<Users />} /> },
       { path: "*", exact: true, element: <Error /> },
       // { path: "starter", exact: true, element: <Statistics /> },

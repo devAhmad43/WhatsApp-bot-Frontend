@@ -92,7 +92,7 @@ useEffect(() => {
   if (storeQuotations?.length === 0) {
     fetchQuotations();
   }
-}, []);
+}, [dispatch]);
 console.log('store.....', storeQuotations);
   /////////////////////////////// fetch all deals //////////////////////////////
   return (

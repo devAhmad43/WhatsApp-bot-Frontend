@@ -23,6 +23,7 @@ const AddSite = () => {
   const location = useLocation();
   const storeAllQuotation = useSelector(selectQuotations);
   const { quotationId } = useParams(); // Get the quotation ID from the URL parameters
+  console.log("sdsdsdas params =====>",quotationId)
   const quotationInitial = {
     title: "",
     quotationNumber: "",
@@ -205,7 +206,6 @@ const AddSite = () => {
           "quotation"
         );
       }
-
       if (attachment instanceof File) {
         const compressedAttachment = await imageCompression(
           attachment,
@@ -247,10 +247,11 @@ const AddSite = () => {
           newQuotation,
           { headers: { "Content-Type": "application/json" } }
         );
-        if (response.status === 200) {
+        if (response?.status === 200) {
           // const data=response.data
-          console.log("updated data =======>", response.data);
-          dispatch(updateQuotations(response.data.quotations));
+          console.log("updated data =======>", response?.data);
+          dispatch(updateQuotations(response?.data?.existingQuotation));
+          navigate('/admin/sites')
           toast.success("Quotation updated successfully");
         }
       } else {
@@ -273,6 +274,7 @@ const AddSite = () => {
       toast.error("An error occurred while submitting the quotation");
     }
   };
+
   // title section content
   const [showModal, setShowModal] = useState(false);
   const [ClientModals, setClientModals] = useState(false);
@@ -405,7 +407,7 @@ const AddSite = () => {
                       </button>
                       <button
                         type="button"
-                        onClick={handleRemove}
+                        // onClick={handelDelete("businessLogo", addQuotation.businessLogo, addQuotation._id.toString()) }
                         className="bg-red-500 text-white px-2 py-1 rounded text-sm hover:bg-red-600"
                       >
                         Remove

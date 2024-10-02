@@ -27,7 +27,6 @@ function App() {
   useEffect(() => {
 
     if (!storeAdmin) {
-
       const storedData = localStorage.getItem('ARABIC_ADMIN_KEY_STRING');
       if (storedData) {
         const { admin, expiration } = JSON.parse(storedData);

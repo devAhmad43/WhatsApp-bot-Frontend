@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill from "react-quill";
+
 export function ButtonsSection({ addQuotation, setQuotation, attachment, setAttachment }) {
   const [visibleSections, setVisibleSections] = useState({
     terms: false,
@@ -115,16 +116,17 @@ export function ButtonsSection({ addQuotation, setQuotation, attachment, setAtta
             <i className="fas fa-times"></i>
           </button>
           <h3 className="text-lg font-bold mb-2">Terms and Conditions</h3>
+
           {addQuotation.terms.map((term, index) => (
             <div key={index} className="flex items-center mb-2">
               <input
                 type="text"
                 value={typeof term === 'string' ? term : term?.text}
-                name='term'
+                name='terms'
                 onChange={(e) => handleTermChange(index, e.target.value)}
                 placeholder={`Term ${index + 1}`}
-                className="p-2 border-0 border-b border-gray-30 focus:outline-none outline-none rounded w-full"
-              />           
+                className="p-2 border rounded w-full"
+              />
               <button
                 onClick={() =>{
                   // e.preventDefault()
@@ -229,8 +231,7 @@ export function ButtonsSection({ addQuotation, setQuotation, attachment, setAtta
             <i className="fas fa-times"></i>
           </button>
           <h3 className="text-lg font-bold mb-2">Additional Info</h3>
-         <div className='flex gap-2'>
-         <input
+          <input
             type="text"
             name="label"
             onChange={handleChange}
@@ -246,7 +247,6 @@ export function ButtonsSection({ addQuotation, setQuotation, attachment, setAtta
             placeholder="text"
             className="p-2 border-0 border-b border-gray-300 rounded w-full"
           />
-         </div>
          
         </div>
       )}

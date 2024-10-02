@@ -1,5 +1,5 @@
 import React from 'react';
-const ClientModal = ({ ClientModals,setQuotation,addQuotation,setClientImage,clientImage, HideClientModals }) => {
+const ClientModal = ({ ClientModals, handelDelete, setQuotation,addQuotation,setClientImage,clientImage, HideClientModals }) => {
   const handleEditImage = () => {
     document.getElementById('fileInput').click(); // Trigger the hidden file input
   };

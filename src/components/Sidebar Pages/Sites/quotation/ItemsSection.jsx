@@ -224,6 +224,7 @@ console.log("thumbnail items section", addQuotation?.items?.thumbnailImage)
                   className="w-16 h-16 object-cover rounded-lg"
                 />
               )}
+              {/* <button className="text-red-500 mb-12>X</button> */}
               <div className="flex items-center space-x-2">
                 <input
                   type="file"
