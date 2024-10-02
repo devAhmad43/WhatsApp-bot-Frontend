@@ -123,7 +123,7 @@ export function ButtonsSection({ addQuotation, setQuotation, attachment, setAtta
                 name='term'
                 onChange={(e) => handleTermChange(index, e.target.value)}
                 placeholder={`Term ${index + 1}`}
-                className="p-2 border rounded w-full"
+                className="p-2 border-0 border-b border-gray-30 focus:outline-none outline-none rounded w-full"
               />           
               <button
                 onClick={() =>{
@@ -229,7 +229,8 @@ export function ButtonsSection({ addQuotation, setQuotation, attachment, setAtta
             <i className="fas fa-times"></i>
           </button>
           <h3 className="text-lg font-bold mb-2">Additional Info</h3>
-          <input
+         <div className='flex gap-2'>
+         <input
             type="text"
             name="label"
             onChange={handleChange}
@@ -245,6 +246,7 @@ export function ButtonsSection({ addQuotation, setQuotation, attachment, setAtta
             placeholder="text"
             className="p-2 border-0 border-b border-gray-300 rounded w-full"
           />
+         </div>
          
         </div>
       )}

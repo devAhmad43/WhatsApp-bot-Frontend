@@ -243,7 +243,7 @@ const AddSite = () => {
       // If quotationId exists, update, otherwise create new
       if (quotationId) {
         const response = await axios.put(
-          `${serverUrl}api/quotation/${quotationId}/edit-quotation`,
+          `${serverUrl}/api/quotation/${quotationId}/edit-quotation`,
           newQuotation,
           { headers: { "Content-Type": "application/json" } }
         );
@@ -255,7 +255,7 @@ const AddSite = () => {
         }
       } else {
         const response = await axios.post(
-          `${serverUrl}api/quotation/create-quotation`,
+          `${serverUrl}/api/quotation/create-quotation`,
           newQuotation,
           { headers: { "Content-Type": "application/json" } }
         );
