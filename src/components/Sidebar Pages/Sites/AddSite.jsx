@@ -16,12 +16,15 @@ import { toast } from "react-toastify";
 import { uploadtoCloudinary } from "../../../uploadFiletoCloudinary";
 import { useNavigate, useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { selectAdmin } from "../../../StoreRedux/adminSlice";
 const serverUrl = process.env.REACT_APP_Server_Url;
 const AddSite = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const storeAllQuotation = useSelector(selectQuotations);
+  // const currentUser = useSelector(selectAdmin)
+  // currentUser._id
   const { quotationId } = useParams(); // Get the quotation ID from the URL parameters
   console.log("sdsdsdas params =====>",quotationId)
   const quotationInitial = {

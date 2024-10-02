@@ -16,6 +16,7 @@ import AddSite from "../Sidebar Pages/Sites/AddSite";
 import Site from "../Sidebar Pages/Sites/Site";
 // import EditSite from "../Sidebar Pages/Sites/EditSite";
 import { SiteInfo } from "../Sidebar Pages/Sites/SiteInfo";
+import EditQuotation from "../Sidebar Pages/Sites/EditQuatation";
 
 
 
@@ -39,7 +40,7 @@ export const ThemeRoutes = [
       // { path: "Editdoor/:doorId", exact: true, element: <PrivateRouteAdmin element={<Editdoor />} /> },
       { path: 'Addsite', exact: true, element: <PrivateRouteAdmin element={<AddSite />} /> },
       { path: "sites", exact: true, element: <PrivateRouteAdmin element={<Site />} /> },
-      { path: "EditSite/:quotationId", exact: true, element: <PrivateRouteAdmin element={<AddSite />} /> },
+      { path: "EditSite/:quotationId", exact: true, element: <PrivateRouteAdmin element={<EditQuotation />} /> },
       { path: "siteInfo/:quotationId", exact: true, element: <PrivateRouteAdmin element={<SiteInfo />} /> },
       { path: 'users', exact: true, element: <PrivateRouteAdmin element={<Users />} /> },
       { path: "*", exact: true, element: <Error /> },
