@@ -56,7 +56,7 @@ const AddSite = () => {
         rate: 0,
         amount: 0,
         description: "",
-        thumbnailImage: "", // URL for item thumbnail image
+        // thumbnailImage: "", // URL for item thumbnail image
       },
     ],
     descriptionField: {
@@ -102,7 +102,7 @@ const AddSite = () => {
         rate: "", // Error message for item rate
         amount: "", // Error message for item amount
         description: "", // Error message for item description
-        thumbnailImage: "", // Error message for item thumbnail image URL
+        // thumbnailImage: "", // Error message for item thumbnail image URL
       },
     ],
     descriptionField: {
@@ -230,19 +230,19 @@ const AddSite = () => {
         );
       }
       console.log("attachment upload", newQuotation);
-      for (let i = 0; i < newQuotation.items.length; i++) {
-        const item = newQuotation.items[i];
-        if (item.thumbnailImage instanceof File) {
-          const compressedItemImage = await imageCompression(
-            item.thumbnailImage,
-            options
-          );
-          newQuotation.items[i].thumbnailImage = await uploadtoCloudinary(
-            compressedItemImage,
-            "quotation"
-          );
-        }
-      }
+      // for (let i = 0; i < newQuotation.items.length; i++) {
+      //   const item = newQuotation.items[i];
+      //   if (item.thumbnailImage instanceof File) {
+      //     const compressedItemImage = await imageCompression(
+      //       item.thumbnailImage,
+      //       options
+      //     );
+      //     newQuotation.items[i].thumbnailImage = await uploadtoCloudinary(
+      //       compressedItemImage,
+      //       "quotation"
+      //     );
+      //   }
+      // }
       // If quotationId exists, update, otherwise create new
       if (quotationId) {
         const response = await axios.put(
@@ -476,6 +476,32 @@ const AddSite = () => {
                   + Add Business Details
                 </button>
                   </div>
+                  <div className='flex flex-col mt-4 space-y-4'>
+  {/* Business Name */}
+  <div className='flex justify-between'>
+    <span className="font-bold text-sm">Business Name:</span>
+    <h2 className="ml-2 font-light text-sm border-b border-1 border-gray-300">{addQuotation.sender.name}</h2>
+  </div>
+
+  {/* Email */}
+  <div className='flex justify-between'>
+    <span className="font-bold text-sm">Email:</span>
+    <h2 className="ml-2 font-light text-sm border-b border-1 border-gray-300">{addQuotation.sender.email}</h2>
+  </div>
+
+  {/* Phone */}
+  <div className='flex justify-between'>
+    <span className="font-bold text-sm">Phone:</span>
+    <h2 className="ml-2 font-light text-sm border-b border-1 border-gray-300">{addQuotation.sender.phone}</h2>
+  </div>
+
+  {/* Country */}
+  <div className='flex justify-between'>
+    <span className="font-bold text-sm">Country:</span>
+    <h2 className="ml-2 font-light text-sm border-b border-1 border-gray-300">{addQuotation.sender.country}</h2>
+  </div>
+</div>
+
                 </div>
               </div>
             </div>
@@ -485,13 +511,14 @@ const AddSite = () => {
             <div className="p-6 bg-gray-100 rounded-md shadow-md">
               <h2 className="text-lg font-semibold border-b border-dashed pb-2 mb-4">
                 Quotation For{" "}
-                <span className="text-gray-600 text-sm whitespace-nowrap">
+                <span className="text-gray-600 text-sm  whitespace-nowrap">
                   Client's Details
                 </span>
               </h2>
               <div className="p-6 bg-white rounded-lg shadow-md">
-                <div className="text-center text-sm text-gray-600 mb-4">
-                  Select a Client/Business from list <br /> or
+                <div className="text-center font-semibold mt-4 mb-4 ">
+                  Client Details
+                 
                 </div>
                 <button
                   onClick={ShowClientModal}
@@ -499,7 +526,33 @@ const AddSite = () => {
                 >
                   + Add New Client
                 </button>
+                <div className='flex flex-col mt-4 space-y-4'>
+  {/* Business Name */}
+  <div className='flex justify-between'>
+    <span className="font-bold text-sm">Client Name:</span>
+    <h2 className="ml-2 font-light text-sm border-b border-1 border-gray-300">{addQuotation.client.name}</h2>
+  </div>
+
+  {/* Email */}
+  <div className='flex justify-between'>
+    <span className="font-bold text-sm">Email:</span>
+    <h2 className="ml-2 font-light text-sm border-b border-1 border-gray-300">{addQuotation.client.email}</h2>
+  </div>
+
+  {/* Phone */}
+  <div className='flex justify-between'>
+    <span className="font-bold text-sm">City:</span>
+    <h2 className="ml-2 font-light text-sm border-b border-1 border-gray-300">{addQuotation.client.city}</h2>
+  </div>
+
+  {/* Country */}
+  <div className='flex justify-between'>
+    <span className="font-bold text-sm">Country:</span>
+    <h2 className="ml-2 font-light text-sm border-b border-1 border-gray-300">{addQuotation.client.country}</h2>
+  </div>
+</div>
               </div>
+        
             </div>
           </div>
         </div>

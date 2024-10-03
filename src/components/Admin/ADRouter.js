@@ -5,7 +5,7 @@ import { AdminLayout } from "./FullLayoutAdmin";
 import Statistics from "../Sidebar Pages/Statistics";
 import Users from "../Sidebar Pages/Users";
 import { PrivateRouteAdmin } from "./PrivateRouteAdmin";
-
+import TitleSection from "../Sidebar Pages/Sites/quotation/TitleSection"
 import Suggestions from "../Sidebar Pages/suggestions/suggestion";
 
 // import SendMsg from "../Sidebar Pages/whatsapp/SendMsg";
@@ -45,7 +45,7 @@ export const ThemeRoutes = [
       { path: 'users', exact: true, element: <PrivateRouteAdmin element={<Users />} /> },
       { path: "*", exact: true, element: <Error /> },
       // { path: "starter", exact: true, element: <Statistics /> },
-    ],
+    ],  
   },
 ];
 

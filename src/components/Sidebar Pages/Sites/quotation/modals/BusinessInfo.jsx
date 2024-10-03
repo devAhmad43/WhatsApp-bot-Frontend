@@ -106,7 +106,10 @@ const BusinessInfo = ({ showModal,addQuotation, setQuotation, handleHideModal,ha
                   </div>
                 </div>
               </div>
+              <button onClick={handleHideModal} className='bg-purple-600 text-white font-serif  rounded-md px-12 py-2 mt-4 -mb-2 float-right'>Save</button>
+
             </div>
+
           </div>
         </div>
       )}

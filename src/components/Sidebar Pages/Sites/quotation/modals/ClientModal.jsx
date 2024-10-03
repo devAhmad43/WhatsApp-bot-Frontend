@@ -334,9 +334,9 @@ const ClientModal = ({
                 <div className="flex justify-end">
                   <button
                     onClick={HideClientModals}
-                    className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                    className="bg-purple-500 font-serif text-white px-4 py-2 rounded hover:bg-blue-600"
                   >
-                    Save Client
+                    Save
                   </button>
                 </div>
               </div>
