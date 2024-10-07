@@ -111,7 +111,7 @@ const EditQuotation = () => {
           businessImage: quotation?.client?.businessImage,
           name: quotation?.client?.name,
           email: quotation?.client?.email,
-          postalCode: quotation?.client?.postalCode,
+          industry: quotation?.client?.industry,
           city: quotation?.client?.city,
           country: quotation?.client?.country,
         },

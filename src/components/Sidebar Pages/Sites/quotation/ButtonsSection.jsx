@@ -247,7 +247,8 @@ export function ButtonsSection({ addQuotation, setQuotation, attachment, setAtta
             <div key={index} className="mb-2 flex items-center space-x-2">
               <input
                 type="text"
-                value={term.text}
+                name='terms'
+                value={typeof term === "string" ? term : term?.text}
                 onChange={(e) => handleTermChange(index, e.target.value)}
                 className="flex-1 p-2 border-b border-0 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer max-w-md"
               />

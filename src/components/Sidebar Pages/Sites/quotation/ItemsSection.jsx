@@ -192,24 +192,21 @@ export function ItemsSection({ addQuotation, setQuotation }) {
 
         {/* Description and Thumbnail */}
         {addQuotation.items.length > 0 && (
-          <div className="mt-6 p-4 bg-gray-50 border rounded-lg">
-            <h3 className="text-lg font-bold mb-4">
-              Details for Selected Item
-            </h3>
-            {/* Description Editor */}
-            <div className="p-2 mb-4">
-              <ReactQuill
-                className="mb-6 rounded-lg"
-                name="description"
-                value={
-                  addQuotation?.items[selectedItemId]?.description || ""
-                }
-                onChange={handleDescriptionChange}
-                theme="snow"
-                placeholder="Description"
-                style={{ height: "150px", width: "500px" }}
-              />
-            </div>
+          <div className="mt-6 p-4 bg-gray-50 border rounded-lg w-full max-w-full">
+  <h3 className="text-lg font-bold mb-4">Details for Selected Item</h3>
+  
+  {/* Description Editor */}
+  <div className="p-2 mb-14 ">
+    <ReactQuill
+      className="mb-6 rounded-lg w-full"
+      name="description"
+      value={addQuotation?.items[selectedItemId]?.description || ""}
+      onChange={handleDescriptionChange}
+      theme="snow"
+      placeholder="Description"
+      style={{ height: "120px" }}
+    />
+  </div>
 
             {/* Thumbnail Upload */}
             {/* <div className="flex mt-4 items-center space-x-4 p-2">
@@ -264,7 +261,7 @@ export function ItemsSection({ addQuotation, setQuotation }) {
 
         {/* Add Field Button */}
         <button
-          className="bg-purple-600 text-white px-4 py-2 rounded-lg mt-4"
+          className="bg-purple-600 mt-12 text-white px-4 py-2 rounded-lg "
           onClick={addItem}
         >
           <i className="fas fa-plus"></i> Add Field

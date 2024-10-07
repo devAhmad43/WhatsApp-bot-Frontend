@@ -189,7 +189,7 @@ const AddSite = () => {
           businessImage: addQuotation?.client?.businessImage,
           name: addQuotation?.client?.name,
           email: addQuotation?.client?.email,
-          postalCode: addQuotation?.client?.postalCode,
+          industry: addQuotation?.client?.industry,
           city: addQuotation?.client?.city,
           country: addQuotation?.client?.country,
         },
@@ -381,7 +381,7 @@ const AddSite = () => {
             </div>
           </div>
           {/* Business Logo */}
-          <div className="w-1/3 flex items-center justify-center p-4">
+          <div className="w-1/2 flex items-center justify-center p-4">
             <label
               htmlFor="business-logo"
               className="relative flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50"
@@ -435,10 +435,10 @@ const AddSite = () => {
                       />
                     </svg>
                     <p className="mb-2 text-sm text-gray-500">
-                      <span className="font-semibold">Add Business Logo</span>
+                      <span className="font-semibold text-center">+ Business Logo</span>
                     </p>
                     <p className="text-xs text-gray-500">
-                      PNG or JPEG (MAX. 800x400px)
+                      PNG or JPEG
                     </p>
                   </>
                 )}
@@ -532,7 +532,7 @@ const AddSite = () => {
     <span className="font-bold text-sm">Client Name:</span>
     <h2 className="ml-2 font-light text-sm border-b border-1 border-gray-300">{addQuotation.client.name}</h2>
   </div>
-
+  
   {/* Email */}
   <div className='flex justify-between'>
     <span className="font-bold text-sm">Email:</span>
