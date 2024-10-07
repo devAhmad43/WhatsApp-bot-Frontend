@@ -164,13 +164,13 @@ export function ItemsSection({ addQuotation, setQuotation }) {
                     value={Number(item?.rate) * Number(item.quantity)}
                   />
                 </div>
-                <div className="w-1/3 text-right">
+                <div className="w-1/6 text-right">
                   <button
                     className={`text-gray-500 hover:text-gray-700 ${
                       index === 0 ? "cursor-not-allowed opacity-50" : ""
                     }`}
                     onClick={() => removeItem(index)}
-                    disabled={index === 0} // Disable the remove button for the first item
+                    hidden={index === 0} // Disable the remove button for the first item
                   >
                     <i className="fas fa-times"></i>
                   </button>
@@ -270,18 +270,6 @@ export function ItemsSection({ addQuotation, setQuotation }) {
         {/* Total Calculation */}
         <div className="flex p-4 justify-end">
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <i className="fas fa-plus text-purple-500"></i>
-              <span>Give Discount on Total</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <i className="fas fa-plus text-purple-500"></i>
-              <span>Add Additional Charges</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <i className="fas fa-eye-slash text-purple-500"></i>
-              <span>Hide Totals</span>
-            </div>
             <hr className="my-4 max-w-sm border-gray-300" />
             <div className="flex justify-between space-x-12 font-bold">
               <span className="font-semibold text-2xl">Total (PKR)</span>

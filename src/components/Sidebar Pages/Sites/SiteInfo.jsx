@@ -47,17 +47,10 @@ export function SiteInfo() {
             </div>
             {/* Quotation Title Section */}
             <div className="mt-6">
-              <h3 className="text-2xl font-bold">Quotation Title</h3>
-              <div className="flex flex-col md:flex-row md:space-x-4">
-                <img
-                  src={currentQuotation.client.businessImage}
-                  alt="Client Business"
-                  className="rounded-full w-24 h-24 bg-gray-100"
-                />
-                <div className="mt-4 md:mt-0">
-                  <p className="text-gray-500">
-                    <strong>Title:</strong> {currentQuotation.title}
-                  </p>
+              <h3 className="text-2xl text-purple-500 font-bold">{currentQuotation.title}</h3>
+              <div className="flex flex-row md:flex-row md:space-x-4">        
+                <div className="mt-2 md:mt-0">
+                 
                   <p className="text-gray-500">
                     <strong>Quotation Number:</strong>{" "}
                     {currentQuotation.quotationNumber}
@@ -78,61 +71,67 @@ export function SiteInfo() {
                         .split("T")[0]
                     }
                   </p>
+
                 </div>
+                <img
+                  src={currentQuotation.businessLogo}
+                  alt="Client Business"
+                  className="rounded-full -mt-4 w-24 h-24 bg-gray-100"
+                />
               </div>
             </div>
 
             {/* Sender and Client Section */}
             <div className="flex flex-col md:flex-row justify-between mt-6 space-y-4 md:space-y-0 md:space-x-6">
-              <div className="md:w-1/2">
-                <h3 className="text-2xl font-bold">Sender Details</h3>
+              <div className="md:w-1/2 bg-purple-100 rounded-lg p-2">
+                <h3 className="text-xl font-bold text-purple-500">Quotation From</h3>
                 <p className="text-gray-500">
-                  <strong>Name:</strong> {currentQuotation.sender.name}
+                  <strong className="text-black">Name:</strong> {currentQuotation.sender.name}
                 </p>
                 <p className="text-gray-500">
-                  <strong>Email:</strong> {currentQuotation.sender.email}
+                  <strong  className="text-black">Email:</strong> {currentQuotation.sender.email}
                 </p>
                 <p className="text-gray-500">
-                  <strong>Phone:</strong> {currentQuotation.sender.phone}
+                  <strong  className="text-black">Phone:</strong> {currentQuotation.sender.phone}
                 </p>
                 <p className="text-gray-500">
-                  <strong>City:</strong> {currentQuotation.sender.city}
+                  <strong  className="text-black">City:</strong> {currentQuotation.sender.city}
                 </p>
                 <p className="text-gray-500">
-                  <strong>Postal Code:</strong>{" "}
+                  <strong  className="text-black">Postal Code:</strong>{" "}
                   {currentQuotation.sender.postalCode}
                 </p>
                 <p className="text-gray-500">
-                  <strong>Country:</strong> {currentQuotation.sender.country}
+                  <strong  className="text-black">Country:</strong> {currentQuotation.sender.country}
                 </p>
               </div>
-              <div className="md:w-1/2">
-                <h3 className="text-2xl font-bold">Client Details</h3>
+              <div className="md:w-1/2  bg-purple-100 rounded-lg p-2">
+                <h3 className="text-xl font-bold text-purple-500">Quotation For</h3>
                 <p className="text-gray-500">
-                  <strong>Name:</strong> {currentQuotation.client.name}
+                  <strong className="text-black">Name:</strong> {currentQuotation.client.name}
                 </p>
                 <p className="text-gray-500">
-                  <strong>Email:</strong> {currentQuotation.client.email}
+                  <strong className="text-black">Email:</strong> {currentQuotation.client.email}
                 </p>
                 <p className="text-gray-500">
-                  <strong>Industry:</strong>{" "}
+                  <strong className="text-black">Industry:</strong>{" "}
                   {currentQuotation.client.industry}
                 </p>
                 <p className="text-gray-500">
-                  <strong>City:</strong> {currentQuotation.client.city}
+                  <strong className="text-black">City:</strong> {currentQuotation.client.city}
                 </p>
                 <p className="text-gray-500">
-                  <strong>Country:</strong> {currentQuotation.client.country}
+                  <strong className="text-black">Country:</strong> {currentQuotation.client.country}
                 </p>
               </div>
             </div>
 
             {/* Items Section */}
             <div className="mt-6">
-              <h3 className="text-2xl font-bold">Quotation Items</h3>
+              <h3 className="text-xl font-bold text-purple-500">Quotation Items</h3>
               <table className="min-w-full mt-4 border">
                 <thead>
-                  <tr className="bg-gray-200">
+                  <tr className="bg-purple-600 text-[#ffff]">
                     <th className="border px-4 py-2">Item Name</th>
                     <th className="border px-4 py-2">Quantity</th>
                     <th className="border px-4 py-2">Rate</th>
@@ -153,20 +152,10 @@ export function SiteInfo() {
                     
                   ))}            
                 </tbody>     
-              </table>
-              <div className="flex float-right text-right font-bold border-2">
-                      Total Rs:
-                      {currentQuotation.items
-                        .reduce((total, item) => {
-                          const rate = parseFloat(item.rate || 0);
-                          const quantity = parseFloat(item.quantity || 0);
-                          return total + rate * quantity;
-                        }, 0)
-                        .toFixed(2)}
-                    </div>
-                    <div className="p-2">
+              </table>            
+                    <div className="w-2/3 lg:w-1/2 mt-2 ml-6">
                       {currentQuotation.items.map((item, index) => (
-                        <span
+                        <span className="text-md text-justify whitespace-pre-line tracking-tight"
                           key={index}
                           dangerouslySetInnerHTML={{
                             __html: item.description || "",
@@ -174,67 +163,81 @@ export function SiteInfo() {
                         ></span>
                       ))}
                     </div>
+                    <div className="flex float-right gap-2 text-right font-bold border-t border-b border-0 text-2xl border-black">
+                    <span className="text-2xl">Total PKR:</span>
+                    <span className="text-2xl">{currentQuotation.items
+                        .reduce((total, item) => {
+                          const rate = parseFloat(item.rate || 0);
+                          const quantity = parseFloat(item.quantity || 0);
+                          return total + rate * quantity;
+                        }, 0)
+                        .toFixed(2)}</span>
+                    </div>
             </div>
-            {/* Description and Additional Info */}
+
+         
+            {/* Terms and Attachments Section */}
             <div className="flex flex-col md:flex-row justify-between mt-6 space-y-4 md:space-y-0 md:space-x-6">
-              <div className="md:w-1/2">
-                <h3 className="text-2xl font-bold">Description</h3>
-                <div className="text-gray-500">
-                  <strong>Description:</strong>
-                  <div
+            <div className="md:w-1/2">
+  <h3 className="text-xl text-purple-500">Terms and Conditions</h3>
+  <ol className="list-decimal ml-6 text-gray-500">
+    {currentQuotation.terms.map((term, index) => (
+      <li key={index} className="p-1">
+        {typeof term === "string" ? term : term?.text}
+      </li>
+    ))}
+  </ol>
+</div>
+   {/* Description and Additional Info */}
+
+            </div>
+   <div className="flex flex-col md:flex-row justify-between mt-6 space-y-4 md:space-y-0 md:space-x-6">
+              <div className="w-full">
+                <h3 className="text-xl text-purple-500 ">Additional Notes</h3>
+                <div className="text-gray-500 p-4">
+                  <div className=""
                     dangerouslySetInnerHTML={{
                       __html:
                         currentQuotation?.descriptionField?.description || "",
                     }}
                   />
                 </div>
-              </div>
-
-              <div className="md:w-1/2">
-                <h3 className="text-2xl font-bold">Attachments</h3>
-                {currentQuotation.descriptionField.attachment && (
-                  <img
-                    src={currentQuotation.descriptionField.attachment}
-                    alt="Attachment"
-                    className="rounded-lg bg-gray-100 mt-4"
-                  />
-                )}
-              </div>
+              </div>             
             </div>
-
-            {/* Terms and Attachments Section */}
-            <div className="flex flex-col md:flex-row justify-between mt-6 space-y-4 md:space-y-0 md:space-x-6">
-              <div className="md:w-1/2">
-                <h3 className="text-2xl font-bold">Terms and Conditions</h3>
-                <ul className="list-disc ml-6 text-gray-500">
-                  {currentQuotation.terms.map((term, index) => (
-                    <li key={index} className="p-2">
-                      {typeof term === "string" ? term : term?.text}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="md:w-1/2">
-                <h3 className="text-2xl font-bold">Additional Information</h3>
-                <h2 className="text-gray-500 font-bold  border-0 border-b border-gray-400">
+              <div className="text-md mt-4 flex gap-2 md:w-1/2">
+                <h2 className="text-gray-600 font-bold">
                  Label: {currentQuotation.descriptionField.label}
                 </h2>
-                <p className="text-gray-500  border-0 border-b border-gray-400">
+                <p className="text-gray-500 font-semibold ">
                  Details {currentQuotation.descriptionField.inputText}
                 </p>
               </div>
-            </div>
+
+              {/* attachment */}
+              <div className="md:w-1/2">
+                <h3 className="text-2xl text-purple-500">Attachments</h3>
+                {currentQuotation.descriptionField.attachment && (
+                  <a
+      href={currentQuotation.descriptionField.attachment}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-500 underline mt-2 block"
+    >
+      View Attachment
+    </a>
+                )}
+              </div>
             {/* contact info */}
-            <div className="flex flex-wrap mt-6 font-mono text-center justify-center items-center gap-4 border-0 border-b border-gray-400">
-  <span className="text-gray-500">For any Inquiry contact</span>
+            <div className="flex flex-wrap mt-6 font-mono text-center justify-center items-center gap-4 ">
+  <span className="text-gray-500">For any enquiry, reach out via email at</span>
   <p>
-    <a href={`tel:${currentQuotation.descriptionField.phone}`} className="text-blue-500 underline">
+    <a href={`tel:${currentQuotation.descriptionField.phone}`} className="text-black font-semibold underline">
       {currentQuotation.descriptionField.phone}
     </a>
   </p>
-  or
+  call on
   <p>
-    <a href={`mailto:${currentQuotation.descriptionField.email}`} className="text-blue-500 underline">
+    <a href={`mailto:${currentQuotation.descriptionField.email}`} className="text-black font-semibold underline">
       {currentQuotation.descriptionField.email}
     </a>
   </p>

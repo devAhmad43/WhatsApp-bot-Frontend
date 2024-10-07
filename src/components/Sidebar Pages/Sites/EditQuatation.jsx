@@ -174,7 +174,7 @@ const EditQuotation = () => {
         { headers: { "Content-Type": "application/json" } }
       );
       if (response?.status === 200) {
-        dispatch(updateQuotations(response?.data?.existingQuotation));
+        dispatch(updateQuotations(response?.data?.existingQuotation));       
         navigate("/admin/sites");
         toast.success("Quotation updated successfully");
       }
